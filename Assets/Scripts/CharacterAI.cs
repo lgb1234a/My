@@ -18,8 +18,10 @@ public class CharacterAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // 关闭导航z轴旋转
         meshAgent.updateRotation = false;
         meshAgent.updateUpAxis = false;
+
         targetPos = transform.position;
         meshAgent.updatePosition = false;
     }
@@ -27,7 +29,8 @@ public class CharacterAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cac.SwitchAnimationState(meshAgent.nextPosition - transform.position, Vector3.Distance(transform.position, targetPos));
+        cac.SwitchAnimationState(transform.position, meshAgent.nextPosition, targetPos);
+        SetNavAgentState();
         if (Input.GetMouseButtonDown(0))
         {
             clickCount ++;
@@ -43,6 +46,11 @@ public class CharacterAI : MonoBehaviour
 
     }
 
+
+    private void SetNavAgentState()
+    {
+        meshAgent.isStopped = !cac.isMoving;
+    }
     void ClickMouse()
     {
         targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

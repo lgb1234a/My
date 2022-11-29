@@ -36,11 +36,17 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\AttackStateBehivour.cs" />
+     <Compile Include="Assets\HitStateBehaviour.cs" />
      <Compile Include="Assets\Scripts\CharacterAI.cs" />
      <Compile Include="Assets\Scripts\CharacterAnimatorController.cs" />
+     <Compile Include="Assets\Scripts\CharacterFightAI.cs" />
      <Compile Include="Assets\Scripts\CursorAnimation.cs" />
      <Compile Include="Assets\Scripts\DestroyEffect.cs" />
+     <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\NotWalkableArea.cs" />
+     <Compile Include="Assets\Scripts\UIManager.cs" />
      <None Include="Assets\Shaders\UIGaussianBlur.shader" />
      <None Include="Assets\Shaders\BloomUIDefalut.shader" />
     <Reference Include="UnityEngine">
